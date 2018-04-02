@@ -131,7 +131,7 @@
 
         (pos === 'r') ? position = 'right' : position = 'left'
 
-        return `\r\n${ipsum1}![My Image](http://via.placeholder.com/350x250){.float-${position}}${ipsum2}\r\n`
+        return `\r\n${ipsum1}![My Image](https://via.placeholder.com/350x250){.float-${position}}${ipsum2}\r\n`
 
 
       },
