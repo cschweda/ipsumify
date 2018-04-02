@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container grid-list-md class="mt-2">
+    <v-container grid-list-md>
       <v-layout row wrap>
         <v-flex xs12>
 
@@ -10,7 +10,7 @@
           <div v-else-if="mode === 'raw html'">
             <pre class="clipboard">{{renderedMarkdown }}</pre>
           </div>
-          <div v-else-if="mode === 'html'">
+          <div v-else-if="mode === 'rendered'">
             <div v-html="renderedMarkdown" class="clipboard"></div>
           </div>
           <div v-else-if="mode === 'raw text'">
@@ -30,6 +30,8 @@
   const markdownItNamedHeadings = require('markdown-it-named-headings');
   renderedMarkdown.use(markdownItAttrs);
   renderedMarkdown.use(markdownItNamedHeadings);
+
+  import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
 
   export default {
     name: 'HelloWorld',
@@ -92,12 +94,17 @@
           console.log(e)
         })
       },
-      generateParagraph(ub) {
-        let lb = (ub / 2);
+      generateParagraph(val) {
+        let ub = parseInt(val);
+
+
+        let lb = parseInt((val / 2));
         let ipsum = loremIpsum({
           count: 10, units: 'sentences', sentenceLowerBound: lb, sentenceUpperBound: ub
         });
         return `\r\n${ipsum}\r\n`;
+
+
 
       },
       generateHeading(lvl) {
@@ -129,7 +136,7 @@
 
       },
       generatePattern: function () {
-        return this.pattern = 'h1-p17-p14-p17-h2-p18-ir'
+        return this.pattern = 'h1-p12-p14-p17-h2-p18-ir'
       },
       parsePattern: function () {
         let patternArray = this.pattern.split('-')
@@ -156,6 +163,9 @@
 
       }
     },
+    components: {
+      FontAwesomeIcon
+    },
     data() {
       return {
         markdown: '',
@@ -170,20 +180,6 @@
 
 
 <style>
-  pre {
-
-    white-space: pre-wrap;
-    /* css-3 */
-    white-space: -moz-pre-wrap;
-    /* Mozilla, since 1999 */
-    white-space: -pre-wrap;
-    /* Opera 4-6 */
-    white-space: -o-pre-wrap;
-    /* Opera 7 */
-    word-wrap: break-word;
-    /* Internet Explorer 5.5+ */
-  }
-
   .float-right {
     float: right;
     padding-left: 10px;

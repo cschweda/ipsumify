@@ -15,7 +15,7 @@
           <v-flex xs12 class="mt-1 pt-1">
 
             <v-btn color="info" @click="showText('markdown')" class="btn-display">Markdown</v-btn>
-            <v-btn color="info" @click="showText('html')" class="btn-display">HTML</v-btn>
+            <v-btn color="info" @click="showText('rendered')" class="btn-display">Rendered</v-btn>
             <v-btn color="info" @click="showText('raw html')" class="btn-display">Raw HTML</v-btn>
             <v-btn color="info" @click="showText('raw text')" class="btn-display">Raw Text</v-btn>
 
@@ -36,11 +36,13 @@
       <v-toolbar-items class="hidden-sm-and-down">
 
         <v-btn color="info" @click.stop="emitRegenerateEvent" style="margin-right: 5px;">Generate Lorum Ipsum</v-btn>
-        <v-btn color="info" @click="copyToClipboard">Copy</v-btn>
+        <v-btn color="info" @click="copyToClipboard">
+          <i class="fal fa-clipboard-check fa-2x"></i>
+        </v-btn>
       </v-toolbar-items>
     </v-toolbar>
     <v-content>
-      <router-view style="padding-bottom: 30px"></router-view>
+      <router-view></router-view>
     </v-content>
 
     <v-footer app fixed>
@@ -107,9 +109,31 @@
 
 
 <style>
-  body {
+  pre {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
     font-size: 24px;
+    font-weight: 400;
+    white-space: pre-wrap;
+    /* css-3 */
+    white-space: -moz-pre-wrap;
+    /* Mozilla, since 1999 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* Internet Explorer 5.5+ */
   }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 400;
+
+  }
+
 
   .toolbar__title {
     font-family: 'Special Elite', cursive;
