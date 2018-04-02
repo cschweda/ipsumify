@@ -43,6 +43,8 @@
 
 
       });
+
+      EventBus.$emit('pattern', this.pattern);
       EventBus.$on('clipboard', () => {
         this.copyToClipboard();
         EventBus.$emit('clipboard-success');
@@ -73,7 +75,7 @@
     methods: {
       generateIpsum() {
 
-        this.generatePattern();
+
         this.parsePattern();
 
 
@@ -96,8 +98,6 @@
       },
       generateParagraph(val) {
         let ub = parseInt(val);
-
-
         let lb = parseInt((val / 2));
         let ipsum = loremIpsum({
           count: 10, units: 'sentences', sentenceLowerBound: lb, sentenceUpperBound: ub
@@ -108,7 +108,9 @@
 
       },
       generateHeading(lvl) {
-
+        if (lvl < 0 || lvl > 6) {
+          return
+        }
         let ipsum = loremIpsum({
           count: 1
         });
@@ -116,7 +118,7 @@
         for (let i = 0; i < lvl; i++) {
           heading = heading + "#"
         }
-        console.log(heading)
+
         return `\r\n${heading} ${ipsum}\r\n`;
 
       },
@@ -135,9 +137,7 @@
 
 
       },
-      generatePattern: function () {
-        return this.pattern = 'h1-p12-p14-p17-h2-p18-ir'
-      },
+
       parsePattern: function () {
         let patternArray = this.pattern.split('-')
         let markdown = '';
@@ -170,7 +170,7 @@
       return {
         markdown: '',
 
-        pattern: '',
+        pattern: 'h1-p12-p14-p17-h2-p18-ir',
         mode: 'markdown'
 
       }

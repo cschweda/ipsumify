@@ -15,6 +15,7 @@
     "@fortawesome/fontawesome-free-solid": "^5.0.9",
     "@fortawesome/vue-fontawesome": "^0.0.22",
     "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
     "front-matter": "^2.3.0",
     "js-beautify": "^1.7.5",
     "lorem-ipsum": "^1.0.4",
