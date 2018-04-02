@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container grid-list-md>
+    <v-container grid-list-md class="mt-3">
       <v-layout row wrap>
         <v-flex xs12>
 
@@ -180,6 +180,20 @@
 
 
 <style>
+  pre {
+
+    white-space: pre-wrap;
+    /* css-3 */
+    white-space: -moz-pre-wrap;
+    /* Mozilla, since 1999 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* Internet Explorer 5.5+ */
+  }
+
   .float-right {
     float: right;
     padding-left: 10px;

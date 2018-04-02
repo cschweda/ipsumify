@@ -29,15 +29,17 @@
     </v-navigation-drawer>
     <v-toolbar app fixed clipped-left justify-center>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <router-link to="/" class="nav-title">
-        <v-toolbar-title>ipsumify.me</v-toolbar-title>
-      </router-link>
-      <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-sm-and-down">
 
-        <v-btn color="info" @click.stop="emitRegenerateEvent" style="margin-right: 5px;">Generate Lorum Ipsum</v-btn>
-        <v-btn color="info" @click="copyToClipboard">
-          <i class="fal fa-clipboard-check fa-2x"></i>
+      <v-toolbar-title>
+        <router-link to="/" class="nav-title">ipsumify.me</router-link>
+      </v-toolbar-title>
+
+      <v-spacer></v-spacer>
+      <v-toolbar-items class=" hidden-sm-and-down ">
+
+        <v-btn color="info " @click.stop="emitRegenerateEvent " style="margin-right: 5px; ">Generate Lorum Ipsum</v-btn>
+        <v-btn color="info " @click="copyToClipboard ">
+          <i class="fal fa-clipboard-check fa-2x "></i>
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
@@ -109,38 +111,16 @@
 
 
 <style>
+  body,
   pre {
-    font-family: 'Roboto', sans-serif;
-    color: #fff;
-    font-size: 24px;
-    font-weight: 400;
-    white-space: pre-wrap;
-    /* css-3 */
-    white-space: -moz-pre-wrap;
-    /* Mozilla, since 1999 */
-    white-space: -pre-wrap;
-    /* Opera 4-6 */
-    white-space: -o-pre-wrap;
-    /* Opera 7 */
-    word-wrap: break-word;
-    /* Internet Explorer 5.5+ */
-  }
-
-  body {
-    font-family: 'Roboto', sans-serif;
-    color: #fff;
-    font-size: 24px;
-    font-weight: 400;
-
+    font-family: 'Roboto', sans-serif !important;
+    color: #fff !important;
+    font-size: 20px !important;
+    font-weight: 400 !important;
   }
 
 
-  .toolbar__title {
-    font-family: 'Special Elite', cursive;
-    font-weight: bold;
-    font-size: 40px;
-    color: red;
-  }
+
 
 
   footer {
@@ -159,7 +139,10 @@
   }
 
   .nav-title {
-    text-decoration: none;
+    text-decoration: none !important;
+    color: red;
+    font-family: 'Special Elite', cursive;
+    font-size: 44px;
   }
 
   .nav-title:hover {
