@@ -7,13 +7,13 @@
           <div v-if="mode === 'markdown'">
             <pre class="clipboard">{{markdown}}</pre>
           </div>
-          <div v-else-if="mode === 'html-raw'">
+          <div v-else-if="mode === 'raw html'">
             <pre class="clipboard">{{renderedMarkdown }}</pre>
           </div>
-          <div v-else-if="mode === 'html-rendered'">
+          <div v-else-if="mode === 'html'">
             <div v-html="renderedMarkdown" class="clipboard"></div>
           </div>
-          <div v-else-if="mode === 'raw'">
+          <div v-else-if="mode === 'raw text'">
             <pre class="clipboard">{{rawText}}</pre>
           </div>
         </v-flex>
@@ -37,16 +37,20 @@
       this.generateIpsum();
       EventBus.$on('regenerate', () => {
         this.generateIpsum();
+        EventBus.$emit('regenerate-success');
+
 
       });
       EventBus.$on('clipboard', () => {
         this.copyToClipboard();
+        EventBus.$emit('clipboard-success');
 
       });
       EventBus.$on('display', (mode) => {
         //this.generateIpsum();
         this.mode = mode;
         console.log(mode)
+        EventBus.$emit('mode', mode);
 
       });
     },
