@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+    <title>Whoops!</title>
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        .errorScreen {
+            background: #333;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .code,
+        .pipe,
+        .message {
+            font-size: 48px;
+            font-weight: 900;
+        }
+
+        .code {
+            color: rgb(228, 53, 53);
+        }
+
+        .pipe,
+        .message {
+            color: #ccc;
+        }
+
+        a.homeLink {
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 400;
+            color: red;
+        }
+
+        a.homeLink:hover {
+            color: #aaa;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="errorScreen page-height">
+        <div class="item">
+            <span class="code">404</span>
+            <span class="pipe">&nbsp;|&nbsp;</span>
+            <span class="message">Page Not Found</span>
+
+        </div>
+        <div class="item" style="margin-top: 30px">
+            <a href="/" class="homeLink">&laquo;&nbsp;Try again</a>
+        </div>
+
+    </div>
+</body>
+
+<script>
+
+</script>
+
+</html>
