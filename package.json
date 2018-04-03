@@ -23,6 +23,7 @@
     "markdown-it-attrs": "^1.2.1",
     "markdown-it-named-headings": "^1.1.0",
     "postcss-font-magician": "^2.1.1",
+    "prerender-spa-plugin": "^3.0.0",
     "vue": "^2.5.2",
     "vue-clipboard2": "^0.1.0",
     "vue-router": "^3.0.1",
