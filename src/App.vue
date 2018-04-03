@@ -73,6 +73,28 @@
             <v-btn @click.stop.prevent="emitResetToDefaultPatternEvent ">
               Reset
             </v-btn>
+            <div class="mt-3 mb-5 layout-options">
+              <h4>Layout pattern options:</h4>
+              <ul style="margin-left: 30px" class="mt-2">
+                <li>
+                  <code>h</code> +
+                  <code>integer < 7</code> = Heading level 1-6</li>
+                <li>
+                  <code>p</code> +
+                  <code>integer</code> = Paragraph + max number of sentences (minimum = max /2)</li>
+                <li>
+                  <code>ir</code> = Image float right</li>
+                <li>
+                  <code>il</code> = Image float left</li>
+                <li>
+                  <code>-</code> = Element seperator</li>
+              </ul>
+              <div class="mt-3">
+                <strong>Example:</strong>
+                <br>
+                <code>h1-p12-p14-p17-h2-p18-ir</code>
+              </div>
+            </div>
 
           </v-form>
         </v-container>
@@ -214,5 +236,16 @@
 
   .github:hover {
     color: #ccc;
+  }
+
+  code {
+    background-color: #f5f5f5;
+    color: #bd4147;
+    -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+  }
+
+  .layout-options {
+    font-size: 16px
   }
 </style>
