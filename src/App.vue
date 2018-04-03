@@ -112,7 +112,7 @@
                 <li>
                   <code>il</code> = Image float left</li>
                 <li>
-                  <code>-</code> = Element seperator</li>
+                  <code>-</code> = Element separator</li>
               </ul>
               <div class="mt-3">
                 <strong>Example:</strong>
