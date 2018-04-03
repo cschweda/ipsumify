@@ -2,6 +2,10 @@
 
 > Generate Lorum Ipsum in Markdown, html, and plain text.
 
+## Site
+
+https://ipsumify.me
+
 ## Build Setup
 
 ```bash
