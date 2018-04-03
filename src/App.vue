@@ -78,10 +78,10 @@
               <ul style="margin-left: 30px" class="mt-2">
                 <li>
                   <code>h</code> +
-                  <code>integer < 7</code> = Heading level 1-6</li>
+                  <code>number < 7</code> = Heading level 1-6</li>
                 <li>
                   <code>p</code> +
-                  <code>integer</code> = Paragraph + max number of sentences (minimum = max /2)</li>
+                  <code>number</code> = Paragraph + max number of sentences (minimum = max /2)</li>
                 <li>
                   <code>ir</code> = Image float right</li>
                 <li>
