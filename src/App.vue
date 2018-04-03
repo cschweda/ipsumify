@@ -26,7 +26,7 @@
 
           <v-flex xs12 style="border-top: 1px solid #aaa;" class="mt-4 pt-4">
 
-            <v-btn color="info" @click="adjustLayout">Adjust Layout</v-btn>
+            <v-btn color="info" @click="adjustLayout">Adjust Layout Pattern</v-btn>
           </v-flex>
         </v-layout>
       </v-container>
@@ -246,6 +246,6 @@
   }
 
   .layout-options {
-    font-size: 16px
+    font-size: 14px
   }
 </style>
