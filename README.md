@@ -12,7 +12,7 @@ https://ipsumify.me
 * `p` + `number` = Paragraph + max number of sentences (minimum = max /2)
 * `ir` = Placeholder image float right
 * `il` = Placeholder image float left
-  `-` = Element seperator
+* `-` = Element seperator
 
 ## Example:
 
