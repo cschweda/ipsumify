@@ -35,12 +35,12 @@
   renderedMarkdown.use(markdownItAttrs);
   renderedMarkdown.use(markdownItNamedHeadings);
 
-  import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+  // import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
 
 
 
   export default {
-    name: 'HelloWorld',
+    name: 'Home',
     created() {
       this.pattern = this.defaultPattern;
       EventBus.$emit('set-pattern', this.pattern);
@@ -180,9 +180,9 @@
 
       }
     },
-    components: {
-      FontAwesomeIcon
-    },
+    // components: {
+    //   FontAwesomeIcon
+    // },
     data() {
       return {
         markdown: '',

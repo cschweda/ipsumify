@@ -28,6 +28,31 @@
 
             <v-btn color="info" @click="adjustLayout">Adjust Layout Pattern</v-btn>
           </v-flex>
+
+          <!-- <v-flex xs12 text-xs-left class="layout-options mt-3 pl-3">
+
+            <h4>Layout pattern options:</h4>
+            <ul style="margin-left: 30px" class="mt-2">
+              <li>
+                <code>h</code> +
+                <code>number < 7</code> = Heading level 1-6</li>
+              <li>
+                <code>p</code> +
+                <code>number</code> = Paragraph + max sentences</li>
+              <li>
+                <code>ir</code> = Image float right</li>
+              <li>
+                <code>il</code> = Image float left</li>
+              <li>
+                <code>-</code> = Element seperator</li>
+            </ul>
+            <div class="mt-3">
+              <strong>Example:</strong>
+              <br>
+              <code>h1-p12-p14-p17-h2-p18-ir</code>
+
+            </div>
+          </v-flex> -->
         </v-layout>
       </v-container>
     </v-navigation-drawer>
