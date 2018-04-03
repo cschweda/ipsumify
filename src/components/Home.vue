@@ -1,24 +1,6 @@
 <template>
   <div>
-    <!-- <v-container grid-list-md class="mt-3">
-      <v-form>
-        <v-text-field label="Pattern" v-model="pattern" class="test"></v-text-field>
-        <v-btn style="margin-left: -5px">
-          Submit
-        </v-btn>
-        <v-btn>
-          Default
-        </v-btn>
 
-      </v-form>
-    </v-container> -->
-    <!-- <v-container grid-list-md class="mt-5">
-      <v-layout row wrap>
-        <v-flex xs12 text-xs-left style="padding-left: 20px; padding-right: 20px">
-          <div class="mode">{{mode}}</div>
-        </v-flex>
-      </v-layout>
-    </v-container> -->
     <v-container grid-list-md>
       <v-layout row wrap>
         <v-flex xs12 text-xs-right>
@@ -29,13 +11,13 @@
           <div v-if="mode === 'markdown'">
             <pre class="clipboard">{{markdown}}</pre>
           </div>
-          <div v-else-if="mode === 'raw html'">
+          <div v-else-if="mode === 'html'">
             <pre class="clipboard">{{renderedMarkdown }}</pre>
           </div>
           <div v-else-if="mode === 'rendered'">
             <div v-html="renderedMarkdown" class="clipboard"></div>
           </div>
-          <div v-else-if="mode === 'raw text'">
+          <div v-else-if="mode === 'plain text'">
             <pre class="clipboard">{{rawText}}</pre>
           </div>
         </v-flex>
@@ -66,21 +48,29 @@
     },
     mounted() {
 
-      this.generateIpsum();
-      EventBus.$on('regenerate', () => {
-        this.generateIpsum();
+      this.generateIpsum(this.defaultPattern);
+      EventBus.$on('regenerate', (pattern) => {
+        this.generateIpsum(pattern);
         EventBus.$emit('regenerate-success');
 
       });
+
+      EventBus.$on('reset-to-default-pattern', () => {
+        this.pattern = this.defaultPattern;
+        EventBus.$emit('set-pattern', this.pattern);
+        EventBus.$emit('regenerate', this.pattern);
+
+      });
+
+
+
       EventBus.$on('clipboard', () => {
         this.copyToClipboard();
         EventBus.$emit('clipboard-success');
 
       });
       EventBus.$on('display', (mode) => {
-        //this.generateIpsum();
         this.mode = mode;
-        //console.log(mode)
         EventBus.$emit('mode', mode);
 
       });
@@ -95,14 +85,13 @@
         return renderedMarkdown.render(this.markdown)
       },
       rawText: function () {
-
         return this.renderedMarkdown.replace(/(<([^>]+)>)/ig, "");
       }
     },
     methods: {
-      generateIpsum() {
-
-
+      generateIpsum(pattern) {
+        console.log('Pattern: ', pattern)
+        this.pattern = pattern
         this.parsePattern();
 
 
