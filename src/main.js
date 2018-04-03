@@ -9,7 +9,6 @@ import Vuetify from "vuetify";
 Vue.use(Vuetify);
 
 import VueClipboard from "vue-clipboard2";
-
 Vue.use(VueClipboard);
 import "vuetify/dist/vuetify.min.css";
 

@@ -1,8 +1,30 @@
 <template>
   <div>
-    <v-container grid-list-md class="mt-3">
+    <!-- <v-container grid-list-md class="mt-3">
+      <v-form>
+        <v-text-field label="Pattern" v-model="pattern" class="test"></v-text-field>
+        <v-btn style="margin-left: -5px">
+          Submit
+        </v-btn>
+        <v-btn>
+          Default
+        </v-btn>
+
+      </v-form>
+    </v-container> -->
+    <!-- <v-container grid-list-md class="mt-5">
       <v-layout row wrap>
-        <v-flex xs12>
+        <v-flex xs12 text-xs-left style="padding-left: 20px; padding-right: 20px">
+          <div class="mode">{{mode}}</div>
+        </v-flex>
+      </v-layout>
+    </v-container> -->
+    <v-container grid-list-md>
+      <v-layout row wrap>
+        <v-flex xs12 text-xs-right>
+
+        </v-flex>
+        <v-flex xs12 style="padding-left: 20px; padding-right: 20px">
 
           <div v-if="mode === 'markdown'">
             <pre class="clipboard">{{markdown}}</pre>
@@ -33,18 +55,23 @@
 
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
 
+
+
   export default {
     name: 'HelloWorld',
+    created() {
+      this.pattern = this.defaultPattern;
+      EventBus.$emit('set-pattern', this.pattern);
+
+    },
     mounted() {
+
       this.generateIpsum();
       EventBus.$on('regenerate', () => {
         this.generateIpsum();
         EventBus.$emit('regenerate-success');
 
-
       });
-
-      EventBus.$emit('pattern', this.pattern);
       EventBus.$on('clipboard', () => {
         this.copyToClipboard();
         EventBus.$emit('clipboard-success');
@@ -53,7 +80,7 @@
       EventBus.$on('display', (mode) => {
         //this.generateIpsum();
         this.mode = mode;
-        console.log(mode)
+        //console.log(mode)
         EventBus.$emit('mode', mode);
 
       });
@@ -89,7 +116,7 @@
         } else {
           textToCopy = renderedMarkdown.render(this.markdown);
         }
-        console.log(textToCopy)
+        //console.log(textToCopy)
         this.$copyText(textToCopy).then(function (e) {
         }, function (e) {
 
@@ -139,6 +166,7 @@
       },
 
       parsePattern: function () {
+
         let patternArray = this.pattern.split('-')
         let markdown = '';
         patternArray.forEach((el, idx) => {
@@ -169,8 +197,8 @@
     data() {
       return {
         markdown: '',
-
-        pattern: 'h1-p12-p14-p17-h2-p18-ir',
+        defaultPattern: 'h1-p12-p14-p17-h2-p18-ir',
+        pattern: '',
         mode: 'markdown'
 
       }
