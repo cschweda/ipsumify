@@ -8,13 +8,13 @@ https://ipsumify.me
 
 ## Layout pattern options
 
-* `h` + `number < 7` = Heading level 1-6
-* `p` + `number` = Paragraph + max number of sentences (minimum = max /2)
+* `h` + `num < 7` = Heading level 1-6
+* `p` + `num` = Paragraph + max sentences (minimum = max /2)
 * `ir` = Placeholder image float right
 * `il` = Placeholder image float left
 * `-` = Element separator
 
-## Example:
+## Example pattern:
 
 `h1-p12-h2-p4`
 

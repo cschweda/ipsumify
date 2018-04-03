@@ -29,6 +29,14 @@
             <v-btn color="info" @click="adjustLayout">Adjust Layout Pattern</v-btn>
           </v-flex>
 
+          <v-flex xs12 class="mt-3">
+            <span>
+              <a href="https://github.com/cschweda/ipsumify" class="github">
+                <i class="fab fa-github fa-2x"></i>
+              </a>
+            </span>
+          </v-flex>
+
           <!-- <v-flex xs12 text-xs-left class="layout-options mt-3 pl-3">
 
             <h4>Layout pattern options:</h4>
@@ -77,7 +85,7 @@
       <router-view></router-view>
     </v-content>
 
-    <v-footer app fixed>
+    <!-- <v-footer app fixed>
       <v-layout row wrap justify-center>
         <span>
           <a href="https://github.com/cschweda/ipsumify" class="github">
@@ -85,7 +93,7 @@
             Github</a>
         </span>
       </v-layout>
-    </v-footer>
+    </v-footer> -->
     <v-bottom-sheet v-model="sheet">
       <v-btn slot="activator" color="purple" dark>Click me</v-btn>
       <v-card>
@@ -103,10 +111,10 @@
               <ul style="margin-left: 30px" class="mt-2">
                 <li>
                   <code>h</code> +
-                  <code>number < 7</code> = Heading level 1-6</li>
+                  <code>num < 7</code> = Heading level 1-6</li>
                 <li>
                   <code>p</code> +
-                  <code>number</code> = Paragraph + max number of sentences (minimum = max /2)</li>
+                  <code>num</code> = Paragraph + max sentences (minimum = max /2)</li>
                 <li>
                   <code>ir</code> = Image float right</li>
                 <li>
@@ -249,7 +257,7 @@
     font-weight: 900;
     text-transform: uppercase;
     color: red;
-    border: 1px dotted red;
+    border: 1px solid red;
     padding: 5px;
     margin-right: 20px;
   }
